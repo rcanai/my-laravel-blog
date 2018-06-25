@@ -1,0 +1,38 @@
+{
+    "extends": ["standard"],
+	"parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "ecmaFeatures": {
+        "globalReturn": true
+    },
+    "plugins": ["html"],
+	"env": {
+		"browser": true,
+        "jquery": true
+	},
+	"globals": {
+        "Vue": true,
+        "axios": true,
+        "moment": true,
+        "Utility": true
+    },
+    "rules": {
+        "no-console": "warn",
+        "no-unused-vars": [
+            "error", {
+                "vars": "local",
+                "args": "after-used",
+                "ignoreRestSiblings": true,
+                "varsIgnorePattern": "(^[A-Z])"
+            }
+        ],
+        "no-var": "error",
+            "prefer-const": ["error", {
+            "destructuring": "any",
+            "ignoreReadBeforeAssign": false
+        }],
+        "arrow-parens": ["error", "always"]
+    }
+}

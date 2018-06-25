@@ -1,0 +1,14 @@
+{
+  // PHPの実行パスを設定
+  "phpcs.showWarnings": true,
+  "phpcs.standard": null,
+  "phpcs.enable": true,
+  "php.executablePath": "C:\\php\\php-win.exe",
+  "php.validate.executablePath": "C:\\php\\php-win.exe",
+  //"phpcs.executablePath": "",
+  "phpcs.executablePath": "C:\\VagrantWork\\php\\html\\my-laravel-blog\\vendor\\squizlabs\\php_codesniffer\\bin\\phpcs.bat",
+  "eslint.options": {
+    "extensions": [".js", ".vue"]
+  },
+  "eslint.validate": ["javascript", "vue"]
+}
