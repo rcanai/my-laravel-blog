@@ -1,0 +1,49 @@
+//
+// 色
+//
+// 備考
+// lighten($color-primary, xx%); 輝度を上げる（明るくする）
+// darken($color-primary, xx%); 輝度を下げる（暗くする）
+// rgba($color-primary, 0.x); 透明度（0から1で指定）
+// mix($color-light, $color-dark); 中間色を得る
+//
+
+// 原色（基本的には使用しない）
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+// 背景色 / 文字色 / 基本線色
+$color-light: #fafafa;
+$color-dark: #333333;
+$color-gray: mix($color-light, $color-dark); // lightとdarkの中間
+
+// アプリケーション基本色
+$color-primary: #8BC34A; // メイン
+$color-secondary: #3A9963; // サブ
+$color-tertiary: #D76E52; // アクセント
+
+// システム基本色
+$color-danger: #c82333; // 赤色系
+$color-warning: #ffc107; // 黄色系
+$color-success: #28a745; // 緑色系
+$color-info:#17a2b8; // 青色系
+
+//
+// 幅
+//
+$mobile: 640px;
+$pc: 1280px;
+$hd: 1920px;
+$application-min-width: (($hd / 2) - 20px); // (HD / 2) - Scrollbar width
+
+//
+// 割合
+//
+$luminance-strong: 45%;
+$luminance-weak: 15%;
+
+//
+// プロパティの初期値
+//
+$border-radius-form: .25rem;
+$padding-form: .3rem .6rem;

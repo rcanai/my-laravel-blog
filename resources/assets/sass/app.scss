@@ -1,14 +1,28 @@
+// 定数
+@import "partials/variables";
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+// ミックスイン
+@import "partials/mixin";
 
-// Variables
-@import "variables";
+// リセット
+@import "partials/reset";
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// タイポグラフィ（タグ指定のみ）
+@import "partials/typography";
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+// フォーム（タグ指定のみ）
+@import "partials/form";
+
+// ユーティリティ（クラスによってスタイルを適用させる）
+@import "partials/utility";
+
+// フレームワーク（クラスによってスタイルを適用させる）
+@import "partials/framework";
+
+// ベンダー（Vueやその他のライブラリのスタイル）
+@import "partials/vendor";
+
+// アプリケーション全体の設定
+@import "partials/layouts";
+
+

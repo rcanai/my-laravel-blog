@@ -1,0 +1,39 @@
+//
+// Vueのちらつき防止
+//
+[v-cloak] > * {
+  display: none !important;
+}
+
+//
+// Vue-editorのスタイル
+//
+.quillWrapper {
+  .ql-toolbar {
+    padding: 0 !important;
+    background-color: rgba($color-primary, .5);
+    .ql-formats {
+      margin: 0 !important;
+      > button {
+        height: auto !important;
+      }
+    }
+    .ql-link,
+    .ql-image,
+    .ql-video {
+      display: none !important;
+    }
+  }
+  .ql-container {
+    background-color: $color-white;
+  }
+  .ql-editor {
+    color: $color-dark;
+    min-height: 5rem !important;
+    padding: .5rem;
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 .1rem rgba($color-primary, .5);
+    }
+  }
+}

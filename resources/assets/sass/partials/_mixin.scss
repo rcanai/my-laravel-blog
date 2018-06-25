@@ -1,0 +1,19 @@
+/**
+ * ミックスイン（他のページで使用するミックスインを定義）
+**/
+
+// float解除
+@mixin clear-both() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+// 文字の3点リーダー（親要素に幅とoverflow:hiddenが必要）
+@mixin ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

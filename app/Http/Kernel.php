@@ -19,6 +19,8 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
+        // トランザクションを共通で行うミドルウェア
+        \App\Http\Middleware\TransactionMiddleware::class,
     ];
 
     /**
@@ -59,5 +61,7 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        // アカウントによって言語を切り替えるためのミドルウェア
+        'language' => \App\Http\Middleware\LanguageMiddleware::class,
     ];
 }

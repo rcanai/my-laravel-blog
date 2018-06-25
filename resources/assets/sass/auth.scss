@@ -1,0 +1,19 @@
+@import "partials/variables";
+
+#main {
+  padding-top: 10rem;
+  .main-container {
+    width: 20rem;
+    min-height: auto;
+    border-radius: .5rem;
+  }
+  .page-title {
+    border-radius: .5rem .5rem 0 0;
+    background-color: $color-dark;
+  }
+}
+
+#form-login {
+  display: flex;
+  flex-flow: column nowrap;
+}

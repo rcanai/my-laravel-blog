@@ -1,0 +1,298 @@
+//
+// カスタムラジオボタン
+//
+.custom-radio {
+  position: relative;
+  padding-left: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+  span {
+    position: absolute;
+    left: 0;
+    top: .1rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: $color-white;
+    border: 1px solid $color-gray;
+    border-radius: 50%;
+    transition: all .15s ease-in-out;
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: .35rem;
+      top: .35rem;
+      width: .4rem;
+      height: .4rem;
+      border-radius: 50%;
+      background-color: $color-white;
+    }
+  }
+  // ホバー時の背景色
+  &:hover input ~ span {
+    background-color: rgba($color-gray, .3);
+  }
+  // チェック時の背景色
+  input:checked ~ span {
+    background-color: $color-primary;
+    &::after {
+      display: block;
+    }
+  }
+  // 非活性時のスタイル
+  input:disabled ~ span {
+    cursor: not-allowed;
+    opacity: .7;
+    border-color: $color-dark;
+    background-color: $color-gray;
+  }
+}
+
+//
+// カスタムラジオチェックボックス
+//
+.custom-checkbox {
+  position: relative;
+  padding-left: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  span {
+    position: absolute;
+    left: 0;
+    top: .1rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: $color-white;
+    border: 1px solid $color-gray;
+    border-radius: $border-radius-form;
+    transition: all .15s ease-in-out;
+    // チェックマーク
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: .35rem;
+      top: .15rem;
+      width: .5rem;
+      height: .7rem;
+      border: solid $color-white;
+      border-width: 0 .2rem .2rem 0;
+      transform: rotate(45deg);
+    }
+  }
+  // ホバー時の背景色
+  &:hover input ~ span {
+    background-color: rgba($color-gray, .3);
+  }
+  // チェック時の背景色
+  input:checked ~ span {
+    background-color: $color-primary;
+    &:after {
+      display: block;
+    }
+  }
+  // 非活性時のスタイル
+  input:disabled ~ span {
+    cursor: not-allowed;
+    opacity: .7;
+    border-color: $color-dark;
+    background-color: $color-gray;
+  }
+}
+
+//
+// フォーム
+//
+.form {
+  display: flex;
+  flex-flow: row wrap;
+  align-self: flex-start;
+  max-width: $pc; // 最大幅
+  .form-item {
+    padding: 0 10% 1rem 0; // 上 右 下 左
+    white-space: nowrap;
+    &.item-quarter {
+      width: 25%;
+    }
+    &.item-half {
+      width: 50%;
+    }
+    &.item-full {
+      width: 100%;
+    }
+    .form-label {
+      display: block;
+      width: 100%;
+      white-space: nowrap;
+      font-weight: bold;
+      margin-bottom: .1rem;
+    }
+    .form-control {
+      &.control-half {
+        width: 50%;
+      }
+      &.control-quarter {
+        width: 25%;
+      }
+    }
+    input.form-control,
+    textarea.form-control,
+    div.form-control {
+      display: block;
+      width: 100%;
+    }
+    select.form-control {
+      display: block;
+      min-width: 8rem
+    }
+  }
+}
+
+// 必須
+.required {
+  color: $color-danger;
+  padding: 0 .1rem;
+}
+
+//
+// #top
+//
+#move-page-top {
+  position: fixed;
+  opacity: 0;
+  bottom: -4rem;
+  right: 1rem;
+  width: 4rem;
+  height: 4rem;
+  padding-top: .5rem;
+  text-align: center;
+  background-color: $color-tertiary;
+  border-radius: 1rem;
+  box-shadow: .1rem .1rem .1rem $color-gray;
+  cursor: pointer;
+  z-index: 1000;
+  transition: opacity .3s ease-in-out, bottom .2s ease-in-out;
+  &.show {
+    opacity: .9;
+    bottom: 1rem;
+  }
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+//
+// アラート
+//
+#alert {
+  position: fixed;
+  border-radius: .25rem;
+  background-color: $color-gray;
+  color: $color-light;
+  padding: .25rem .5rem;
+  opacity: 0;
+  z-index: -1;
+  transition: all .3s;
+  top: 3.1rem;
+  left: 5%;
+  width: 90%;
+  &.show {
+    opacity: 1;
+    z-index: 1000;
+  }
+  &.danger {
+    color: $color-danger;
+    background-color: lighten($color-danger, $luminance-strong);
+    box-shadow: 0 0 0 .1rem rgba($color-danger, .25);
+  }
+  &.warning {
+    color: $color-warning;
+    background-color: lighten($color-warning, $luminance-strong);
+    box-shadow: 0 0 0 .1rem rgba($color-warning, .25);
+  }
+  &.success {
+    color: $color-success;
+    background-color: lighten($color-success, $luminance-strong);
+    box-shadow: 0 0 0 .1rem rgba($color-success, .25);
+  }
+  &.info {
+    color: $color-info;
+    background-color: lighten($color-info, $luminance-strong);
+    box-shadow: 0 0 0 .1rem rgba($color-info, .25);
+  }
+  .alert-messages {
+    margin-left: 1.5rem;
+    list-style-type: disc;
+  }
+}
+
+
+//
+// スピナー
+// https://projects.lukehaas.me/css-loaders/
+//
+#loading-spinner {
+  display: none;
+  transform: all .3s;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding: 6rem;
+  &.show {
+    display: block;
+    position: fixed;
+    font-size: 10px;
+  }
+  > .icon,
+  > .icon:after {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+  }
+  > .icon {
+    position: relative;
+    text-indent: -9999em;
+    border-top: .5rem solid rgba($color-primary, .2);
+    border-right: .5rem solid rgba($color-primary, .2);
+    border-bottom: .5rem solid rgba($color-primary, .2);
+    border-left: .5rem solid $color-primary;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1s infinite linear;
+    animation: load8 1s infinite linear;
+    margin: 0 auto;
+  }
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

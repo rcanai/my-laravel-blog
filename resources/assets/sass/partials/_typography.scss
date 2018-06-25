@@ -1,0 +1,64 @@
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  font-family: inherit;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: inherit;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: inherit;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: inherit;
+}
+
+h4 {
+  font-size: 1.4rem;
+  font-weight: inherit;
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: inherit;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: inherit;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  background-color: transparent;
+  transition: color .2s ease-in-out;
+  &:hover,
+  &:focus {
+    color: lighten($color-primary, $luminance-weak);
+  }
+}
+
+ul,
+ol {
+  list-style: none;
+  vertical-align: baseline;
+}
+
+u {
+  text-decoration: underline;
+}

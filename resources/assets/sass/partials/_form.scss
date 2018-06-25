@@ -1,0 +1,103 @@
+//
+// input
+//
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  background-color: $color-white;
+  background-clip: padding-box;
+  border: 1px solid $color-gray;
+  border-radius: $border-radius-form;
+  color: $color-dark;
+  padding: $padding-form;
+  font-size: 1rem;
+  transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+  &::placeholder {
+    color: #e6e6e6;
+  }
+  &:focus {
+    border-color: $color-primary;
+    outline: 0;
+    box-shadow: 0 0 0 .1rem rgba($color-primary, .25);
+  }
+  &:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+    background-color: $color-light;
+    border-color: $color-dark;
+  }
+}
+
+input[type="file"],
+input[type="radio"],
+input[type="checkbox"] {
+  &:focus {
+    outline: 1px thin $color-primary;
+  }
+}
+
+input[type="number"] {
+  text-align: right;
+  -moz-appearance:textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+//
+// button
+//
+button {
+  background-color: $color-light;
+  border: 1px solid darken($color-light, $luminance-weak);
+  border-radius: $border-radius-form;
+  color: $color-dark;
+  padding: $padding-form;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  font-size: 1rem;
+  transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+  &:not(:disabled):hover {
+    background-color: darken($color-light, $luminance-weak);
+    border-color: darken($color-light, $luminance-weak);
+  }
+  &:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+    text-decoration: line-through;
+  }
+}
+
+//
+// select
+//
+select {
+  -webkit-appearance: menulist-button;
+  -moz-appearance: menulist;
+  text-indent: 0.01px;
+  text-overflow: '';
+  vertical-align: middle;
+  &::-ms-expand {
+    background: none;
+    border: none;
+    color: $color-dark;
+    display: block;
+  }
+  &:not([size]):not([multiple]) {
+    height: calc(2.25rem + 2px);
+  }
+  &[multiple] {
+    height: auto;
+  }
+}
