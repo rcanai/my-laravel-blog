@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -36,5 +37,22 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
         parent::shareConstants();
+    }
+
+    /**
+     * ログインに使用するカラムを変更
+     */
+    public function username()
+    {
+        return 'login_id';
+    }
+
+    /**
+     * 認証に削除フラグを追加
+     */
+    public function credentials(Request $request)
+    {
+        $credentials = $request->only($this->username(), 'password');
+        return array_merge($credentials, ['deleted' => false]);
     }
 }

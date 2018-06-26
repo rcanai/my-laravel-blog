@@ -30,12 +30,5 @@ class Controller extends BaseController
     {
         // 言語
         \View::share('language', app()->getLocale());
-
-        // タイムゾーン
-        if (\Auth::check()) {
-            \View::share('timezone', \Auth::user()->timezone);
-        } else {
-            \View::share('timezone', 'Asia/Tokyo');
-        }
     }
 }

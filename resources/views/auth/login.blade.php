@@ -14,8 +14,8 @@
   <form id="form-login" method="POST" action="{{ route('login') }}" autocomplete="off">
     @csrf
     @method('post')
-    <label>@lang('label.email')</label>
-    <input type="email" name="email" autocomplete="off">
+    <label>@lang('label.login_id')</label>
+    <input type="text" name="login_id" autocomplete="off">
     <div>&nbsp;</div>
     <label>@lang('label.password')</label>
     <input type="password" name="password" autocomplete="off">

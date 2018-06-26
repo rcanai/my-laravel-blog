@@ -61,11 +61,8 @@ axios.interceptors.request.use((config) => {
 window.axios = axios;
 
 // momentjsの設定
-const $appTimezone = $('#app-timezone');
-const appTimezone = $appTimezone.val();
-moment.tz.setDefault(appTimezone);
+moment.tz.setDefault('Asia/Tokyo');
 moment.locale(document.documentElement.lang || 'ja');
-$appTimezone.remove();
 window.moment = moment;
 
 // URL

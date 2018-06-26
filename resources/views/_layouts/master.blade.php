@@ -13,13 +13,8 @@
 <body>
   <input type="hidden" id="app-url" value="{{url('/')}}" style="display:none;">
   <input type="hidden" id="api-url" value="{{url('/_api')}}" style="display:none;">
-  <input type="hidden" id="app-timezone" value="{{$language}}" style="display:none;">
 
-  <div class="body-container">
-
-    @auth
-      @include('_layouts.header')
-    @endauth
+  @include('_layouts.header')
 
     <main id="main">
 
@@ -29,11 +24,7 @@
 
     </main>
 
-  </div>
-
-   @include('_layouts.move_page_top')
-
-  @include('_layouts.footer')
+  @include('_layouts.move_page_top')
 
   <script src="@assetTimestamp(js/manifest.js)"></script>
   <script src="@assetTimestamp(js/vendors.js)"></script>

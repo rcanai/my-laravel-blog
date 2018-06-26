@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 use Carbon\Carbon;
 
-class CreateUsersTable extends Migration
+class CreateAccountsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
 
             $table->string('login_id', 191)->comment('ログインID');
@@ -32,7 +32,7 @@ class CreateUsersTable extends Migration
         });
 
         // admin
-        DB::table('users')->insert(
+        DB::table('accounts')->insert(
             array(
                 'name' => 'Admin',
                 'email' => 'admin@example.com',
@@ -51,6 +51,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('accounts');
     }
 }
