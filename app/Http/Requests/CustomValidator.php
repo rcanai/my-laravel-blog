@@ -13,4 +13,11 @@ class CustomValidator extends Validator
     {
         return preg_match("/^[0-9\-]{7,8}+$/i", $value);
     }
+
+    public function replaceJpZipCode($attribute, $value, $parameters)
+    {
+        $val = $this->getValue($parameters[0]);
+        $attr = $this->getDisplayableAttribute($parameters[0]);
+        return str_replace([':other', ':value'], [$attr, $val], $message);
+    }
 }

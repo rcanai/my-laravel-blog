@@ -134,10 +134,9 @@ const Utility = {
    * @param {string} elementSelector querySelectorと同様のセレクター
    * @param {Array} handles ドラッグ可能なターゲットのクラス名配列
    *                         ※ 先頭のピリオドはつけません。
-   * @param {boolean} center 要素を画面中央に持ってくる
    * @returns {void}
    */
-  draggable (elementSelector = '', handleClasses = [], center = false) {
+  draggable (elementSelector = '', handleClasses = []) {
     const element = document.querySelector(elementSelector);
     let pos1 = 0;
     let pos2 = 0;
@@ -152,12 +151,8 @@ const Utility = {
       });
     }
 
-    if (center) {
-      element.style.position = 'absolute';
-      element.style.top = document.documentElement.scrollTop + 80 + 'px';
-      element.style.left = '50%';
-      element.style.transform = 'translateX(-50%)';
-    }
+    element.style.position = 'absolute';
+    element.style.top = document.documentElement.scrollTop + 80 + 'px';
 
     function dragMouseDown (e) {
       if (handleClasses.length > 0) {
