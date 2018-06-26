@@ -5,9 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class AccountsController extends Controller
+class AdminController extends Controller
 {
-
     public function __construct()
     {
         parent::shareConstants();
@@ -15,6 +14,6 @@ class AccountsController extends Controller
 
     public function index()
     {
-        return view('admin.account');
+        return view('admin.index');
     }
 }

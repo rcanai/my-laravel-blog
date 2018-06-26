@@ -24,6 +24,12 @@ Route::get('/', 'HomeController@index')->name('home');
 // Example
 Route::get('/style-example', 'HomeController@styleExample')->name('styleExample');
 
+// Admin
+Route::get('/admin', 'Admin\AdminController@index');
+
+// Accounts
+Route::get('/accounts', 'Admin\AccountsController@index');
+
 
 /*
 |--------------------------------------------------------------------------
