@@ -22,13 +22,13 @@ $this->get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/', 'HomeController@index')->name('home');
 
 // Example
-Route::get('/style-example', 'HomeController@styleExample')->name('styleExample');
+Route::get('style-example', 'HomeController@styleExample')->name('styleExample');
 
 // Admin
-Route::get('/admin', 'Admin\AdminController@index');
+Route::get('admin', 'Admin\AdminController@index');
 
 // Accounts
-Route::get('/accounts', 'Admin\AccountsController@index');
+Route::get('accounts', 'Admin\AccountsController@index');
 
 
 /*
@@ -39,5 +39,7 @@ Route::get('/accounts', 'Admin\AccountsController@index');
 */
 
 Route::prefix('_api')->group(function () {
-    // pass
+    // Accounts
+    Route::get('accounts', 'Admin\AccountsController@fetch');
+    Route::get('accounts/{id}', 'Admin\AccountsController@fetch');
 });

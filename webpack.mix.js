@@ -6,6 +6,8 @@ mix.setPublicPath('public');
 // JavaScript
 mix
   .js('resources/assets/js/home.js', 'js')
+  .js('resources/assets/js/admin/index.js', 'js/admin')
+  .js('resources/assets/js/admin/accounts.js', 'js/admin')
   /* Common & Vendors */
   .js('resources/assets/js/app.js', 'js')
   .extract(
@@ -29,6 +31,7 @@ mix
   /* Pages */
   .sass('resources/assets/sass/home.scss', 'css')
   .sass('resources/assets/sass/auth.scss', 'css')
+  .sass('resources/assets/sass/admin.scss', 'css')
 ;
 
 // jqueryを設定

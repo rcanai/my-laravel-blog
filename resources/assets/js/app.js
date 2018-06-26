@@ -9,8 +9,18 @@ import i18next from 'i18next';
 import langEN from './_lang/en.js';
 import langJA from './_lang/ja.js';
 
+import DatePicker from './_components/DatePicker.vue';
+import MonthPicker from './_components/MonthPicker.vue';
+import TimePicker from './_components/TimePicker.vue';
+import { VueEditor } from 'vue2-editor';
+
 // Vueの初期設定
 Vue.config.productionTip = false;
+
+Vue.component('date-picker', DatePicker);
+Vue.component('month-picker', MonthPicker);
+Vue.component('time-picker', TimePicker);
+Vue.component('vue-editor', VueEditor);
 
 window.Vue = Vue;
 
@@ -33,13 +43,7 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 axios.defaults.method = 'get';
 axios.defaults.data = {};
 axios.defaults.timeout = 5000;
-// アラートを出す
-axios.defaults._alert = true;
-// ローディングスピナーを出す
-axios.defaults._loading = true;
-// ローディングスピナーとアラートを出さない
-axios.defaults._background = false;
-axios.defaults._language = document.documentElement.lang || 'ja';
+axios.defaults._dummy = 'dummy';
 
 const token = document.head.querySelector('meta[name="csrf-token"]');
 if (token) {
@@ -50,10 +54,6 @@ axios.interceptors.request.use((config) => {
   // Laravelに合わせて_methodパラメーターの初期値を設定
   if (config.method !== 'get') {
     config.data._method = config.data._method || config.method;
-  }
-  if (!config._background && config._loading) {
-    // ローディング
-    Utility.toggleLoading(true);
   }
   return config;
 });
@@ -184,6 +184,8 @@ const Utility = {
     }
   }
 };
+
+window.Utility = Utility;
 
 // イベント設定
 $('body')

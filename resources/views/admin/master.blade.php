@@ -35,6 +35,9 @@
           <li>
             <a href="{{url('style-example')}}">@lang('route.style_example')</a>
           </li>
+          <li>
+            <a href="{{url('logout')}}">@lang('route.logout')</a>
+          </li>
           <li class="dummy"></li>
         </ul>
       </nav>
