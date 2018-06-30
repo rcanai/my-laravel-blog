@@ -247,15 +247,15 @@
       <h2>Custom checkbox</h2>
       <label class="custom-checkbox">
         <input type="checkbox" name="custom-checkbox">
-        <span></span>Radio
+        <span></span>Checkbox
       </label>
       <label class="custom-checkbox">
         <input type="checkbox" name="custom-checkbox" checked>
-        <span></span>Radio
+        <span></span>Checkbox
       </label>
       <label class="custom-checkbox">
         <input type="checkbox" name="custom-checkbox" disabled>
-        <span></span>Radio
+        <span></span>Checkbox
       </label>
     </div>
   </section>

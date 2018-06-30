@@ -29,11 +29,13 @@ Route::get('admin', 'Admin\AdminController@index');
 
 // Accounts
 Route::get('accounts', 'Admin\AccountsController@index');
-Route::get('accounts/{id}', 'Admin\AccountsController@edit');
+Route::get('accounts/edit', 'Admin\AccountsController@edit');
+Route::get('accounts/edit/{id}', 'Admin\AccountsController@edit');
 
 // Posts
 Route::get('posts', 'Admin\PostsController@index');
-Route::get('posts/{id}', 'Admin\PostsController@edit');
+Route::get('posts/edit', 'Admin\PostsController@edit');
+Route::get('posts/edit/{id}', 'Admin\PostsController@edit');
 
 
 /*

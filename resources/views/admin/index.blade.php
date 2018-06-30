@@ -5,7 +5,7 @@
 @endsection
 
 @section('styles')
-<link href="@assetTimestamp(css/admin.css)" rel="stylesheet">
+{{-- <link href="@assetTimestamp(css/admin.css)" rel="stylesheet"> --}}
 @endsection
 
 @section('content')
