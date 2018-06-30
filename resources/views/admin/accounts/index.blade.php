@@ -29,5 +29,5 @@
 @endsection
 
 @section('scripts')
-<script src="@assetTimestamp(js/admin/accounts.js)"></script>
+<script src="@assetTimestamp(js/admin/accounts/index.js)"></script>
 @endsection

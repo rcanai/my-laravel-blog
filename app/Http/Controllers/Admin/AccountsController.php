@@ -18,7 +18,12 @@ class AccountsController extends Controller
 
     public function index()
     {
-        return view('admin.accounts');
+        return view('admin.accounts.index');
+    }
+
+    public function edit($id = 0)
+    {
+        return view('admin.accounts.edit', compact('id'));
     }
 
     public function fetch($id = 0)

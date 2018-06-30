@@ -16,5 +16,5 @@
 @endsection
 
 @section('scripts')
-<script src="@assetTimestamp(js/admin/iondex.js)"></script>
+<script src="@assetTimestamp(js/admin/index.js)"></script>
 @endsection

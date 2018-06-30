@@ -7,7 +7,10 @@ mix.setPublicPath('public');
 mix
   .js('resources/assets/js/home.js', 'js')
   .js('resources/assets/js/admin/index.js', 'js/admin')
-  .js('resources/assets/js/admin/accounts.js', 'js/admin')
+  .js('resources/assets/js/admin/accounts/index.js', 'js/admin/accounts')
+  .js('resources/assets/js/admin/accounts/edit.js', 'js/admin/accounts')
+  .js('resources/assets/js/admin/posts/index.js', 'js/admin/posts')
+  .js('resources/assets/js/admin/posts/edit.js', 'js/admin/posts')
   /* Common & Vendors */
   .js('resources/assets/js/app.js', 'js')
   .extract(
@@ -39,9 +42,18 @@ mix.autoload({
   'jquery/dist/jquery.slim.min': ['$', 'window.jQuery', 'window.$']
 });
 
-// Disable Notification
+// OSのコンパイル完了通知を抑制
 mix.disableNotifications();
 
+// パス管理を簡単に
+mix.webpackConfig({
+  resolve: {
+    alias: {
+      '@js': __dirname + '/resources/assets/js',
+      '@scss': __dirname + '/resources/assets/scss',
+    }
+  },
+})
 
 // 開発環境のみの設定
 if (!mix.inProduction()) {

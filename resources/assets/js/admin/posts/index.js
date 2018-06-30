@@ -1,4 +1,4 @@
-import TableGrid from '../_components/TableGrid.vue';
+import TableGrid from '@js/_components/TableGrid.vue';
 
 const App = new Vue({
   el: '#app',
@@ -7,7 +7,7 @@ const App = new Vue({
   },
   methods: {
     fetch () {
-      axios.get(Utility.xhrUrl(['accounts']))
+      axios.get(Utility.xhrUrl(['posts']))
         .then((response) => {
           this.$refs['table-grid'].setRows(response.data);
         });
@@ -18,7 +18,7 @@ const App = new Vue({
       }
       axios({
         method: 'delete',
-        url: Utility.xhrUrl(['accounts']),
+        url: Utility.xhrUrl(['posts']),
         data: {
           idArray: idArray
         }

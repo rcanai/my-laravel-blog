@@ -6,12 +6,12 @@ import moment from 'moment';
 import 'moment-timezone';
 
 import i18next from 'i18next';
-import langEN from './_lang/en.js';
-import langJA from './_lang/ja.js';
+import langEN from '@js/_lang/en.js';
+import langJA from '@js/_lang/ja.js';
 
-import DatePicker from './_components/DatePicker.vue';
-import MonthPicker from './_components/MonthPicker.vue';
-import TimePicker from './_components/TimePicker.vue';
+import DatePicker from '@js/_components/DatePicker.vue';
+import MonthPicker from '@js/_components/MonthPicker.vue';
+import TimePicker from '@js/_components/TimePicker.vue';
 import { VueEditor } from 'vue2-editor';
 
 // Vueの初期設定
@@ -187,20 +187,17 @@ const Utility = {
 
 window.Utility = Utility;
 
-// イベント設定
-$('body')
-  // ページ上部に移動
-  .on('click', '#move-page-top', (event) => {
-    event.stopPropagation();
-    document.body.scrollTop = document.documentElement.scrollTop = 0;
-  })
-;
+// ページ上部に移動
+// $('body').on('click', '#move-page-top', (event) => {
+//   event.stopPropagation();
+//   document.body.scrollTop = document.documentElement.scrollTop = 0;
+// });
 
-const $movePageTop = $('#move-page-top');
-$(window).scroll((event) => {
-  if ($(event.target).scrollTop() > 100) {
-    $movePageTop.addClass('show');
-  } else {
-    $movePageTop.removeClass('show');
-  }
-});
+// const $movePageTop = $('#move-page-top');
+// $(window).scroll((event) => {
+//   if ($(event.target).scrollTop() > 100) {
+//     $movePageTop.addClass('show');
+//   } else {
+//     $movePageTop.removeClass('show');
+//   }
+// });
