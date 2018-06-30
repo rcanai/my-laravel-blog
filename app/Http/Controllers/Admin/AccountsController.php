@@ -29,8 +29,8 @@ class AccountsController extends Controller
     public function fetch($id = 0)
     {
         if (empty($id)) {
-            $accounts = Account::where('deleted', false)->get();
-            return  $accounts;
+            $accounts = Account::where('deleted', false);
+            return  $accounts->get();
         } else {
             $account = Account::find($id);
             return  $account;

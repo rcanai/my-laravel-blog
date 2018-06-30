@@ -27,8 +27,9 @@ class PostsController extends Controller
     public function fetch($id = 0)
     {
         if (empty($id)) {
-            $posts = Post::orderBy('updated_at', 'desc')->get();
-            return  $posts;
+            $posts = Post::where('deleted', false);
+            $posts->orderBy('updated_at', 'desc');
+            return  $posts->get();
         } else {
             $post = Post::find($id);
             return  $post;

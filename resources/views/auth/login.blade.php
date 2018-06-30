@@ -1,4 +1,4 @@
-@extends('_layouts.master')
+@extends('admin.master')
 
 @section('title')
 @lang('route.login') |&nbsp;

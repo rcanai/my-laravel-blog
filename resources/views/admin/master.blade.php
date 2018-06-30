@@ -14,7 +14,9 @@
   <input type="hidden" id="app-url" value="{{url('/')}}" style="display:none;">
   <input type="hidden" id="api-url" value="{{url('/_api')}}" style="display:none;">
 
-  @include('admin.header')
+  @auth
+    @include('admin.header')
+  @endauth
 
   <main id="main">
 
