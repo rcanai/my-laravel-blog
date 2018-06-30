@@ -2,7 +2,7 @@
   <div class="header-container">
     <div class="application-title">
       <a href="{{url('/')}}">
-        My Laravel base
+        My Laravel blog
       </a>
     </div>
     <nav class="header-nav">
@@ -15,9 +15,6 @@
         </li>
         <li>
           <a href="{{url('accounts')}}">@lang('route.accounts')</a>
-        </li>
-        <li>
-          <a href="{{url('style-example')}}">@lang('route.style_example')</a>
         </li>
         <li>
           <a href="{{url('logout')}}">@lang('route.logout')</a>

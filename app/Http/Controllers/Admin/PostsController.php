@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Http\Requests\Posts\RegisterRequest;
 
@@ -26,11 +27,11 @@ class PostsController extends Controller
     public function fetch($id = 0)
     {
         if (empty($id)) {
-            $accounts = Post::where('deleted', false)->get();
-            return  $accounts;
+            $posts = Post::orderBy('updated_at', 'desc')->get();
+            return  $posts;
         } else {
-            $account = Post::find($id);
-            return  $account;
+            $post = Post::find($id);
+            return  $post;
         }
     }
 
@@ -46,8 +47,9 @@ class PostsController extends Controller
         }
 
         // カラムに値を設定
-        $post->title = $request->login_id ?? '';
-        $post->name = $request->name ?? '';
+        $post->title = $request->title ?? '';
+        $post->content_html = $request->content_html ?? '';
+        $post->content = strip_tags($post->content_html);
         $post->deleted = $request->deleted ?? false;
 
         // 保存

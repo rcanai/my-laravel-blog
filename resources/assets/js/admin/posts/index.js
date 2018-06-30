@@ -27,11 +27,12 @@ const App = new Vue({
           this.fetch();
         });
     },
-    openDialog () {
-      return false;
+    goEdit (object) {
+      Utility.setLocation(['posts', 'edit', object.id]);
     },
     selectedRemoves () {
-      return false;
+      const idArray = this.$refs['table-grid'].getSelectedIdArray();
+      this.removes(idArray);
     }
   },
   created () {

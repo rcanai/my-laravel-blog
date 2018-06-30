@@ -17,6 +17,8 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('title', 191)->comment('タイトル')->default('');
             $table->longText('content')->comment('内容')->default(null)->nullable();
+            $table->longText('content_html')->comment('内容')->default(null)->nullable();
+            $table->boolean('deleted')->comment('削除')->default(false);
             $table->timestamps();
         });
     }

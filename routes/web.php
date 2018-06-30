@@ -54,8 +54,8 @@ Route::prefix('_api')->group(function () {
     Route::delete('accounts', 'Admin\AccountsController@removes');
 
     // Posts
-    Route::get('posts', 'Admin\Admin\PostsController@fetch');
-    Route::get('posts/{id}', 'Admin\Admin\PostsController@fetch');
+    Route::get('posts', 'Admin\PostsController@fetch');
+    Route::get('posts/{id}', 'Admin\PostsController@fetch');
     Route::post('posts', 'Admin\PostsController@register');
     Route::put('posts', 'Admin\PostsController@register');
     Route::delete('posts', 'Admin\PostsController@removes');
