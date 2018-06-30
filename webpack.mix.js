@@ -13,10 +13,10 @@ mix
   .js('resources/assets/js/admin/posts/edit.js', 'js/admin/posts')
   /* Common & Vendors */
   .js('resources/assets/js/app.js', 'js')
+  .js('resources/assets/js/admin.js', 'js')
   .extract(
     [
       'babel-polyfill',
-      'jquery/dist/jquery.slim.min',
       'vue',
       'i18next',
       'axios',
@@ -31,10 +31,10 @@ mix
 mix
   /* Common & Vendors */
   .sass('resources/assets/sass/app.scss', 'css')
+  .sass('resources/assets/sass/admin.scss', 'css')
   /* Pages */
   .sass('resources/assets/sass/home.scss', 'css')
   .sass('resources/assets/sass/auth.scss', 'css')
-  .sass('resources/assets/sass/admin.scss', 'css')
 ;
 
 // jqueryを設定

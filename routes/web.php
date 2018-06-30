@@ -29,6 +29,11 @@ Route::get('admin', 'Admin\AdminController@index');
 
 // Accounts
 Route::get('accounts', 'Admin\AccountsController@index');
+Route::get('accounts/{id}', 'Admin\AccountsController@edit');
+
+// Posts
+Route::get('posts', 'Admin\PostsController@index');
+Route::get('posts/{id}', 'Admin\PostsController@edit');
 
 
 /*
@@ -42,4 +47,14 @@ Route::prefix('_api')->group(function () {
     // Accounts
     Route::get('accounts', 'Admin\AccountsController@fetch');
     Route::get('accounts/{id}', 'Admin\AccountsController@fetch');
+    Route::post('accounts', 'Admin\AccountsController@register');
+    Route::put('accounts', 'Admin\AccountsController@register');
+    Route::delete('accounts', 'Admin\AccountsController@removes');
+
+    // Posts
+    Route::get('posts', 'Admin\Admin\PostsController@fetch');
+    Route::get('posts/{id}', 'Admin\Admin\PostsController@fetch');
+    Route::post('posts', 'Admin\PostsController@register');
+    Route::put('posts', 'Admin\PostsController@register');
+    Route::delete('posts', 'Admin\PostsController@removes');
 });

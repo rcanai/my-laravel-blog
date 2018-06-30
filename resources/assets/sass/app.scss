@@ -3,26 +3,3 @@
 
 // ミックスイン
 @import "partials/mixin";
-
-// リセット
-@import "partials/reset";
-
-// タイポグラフィ（タグ指定のみ）
-@import "partials/typography";
-
-// フォーム（タグ指定のみ）
-@import "partials/form";
-
-// ユーティリティ（クラスによってスタイルを適用させる）
-@import "partials/utility";
-
-// フレームワーク（クラスによってスタイルを適用させる）
-@import "partials/framework";
-
-// ベンダー（Vueやその他のライブラリのスタイル）
-@import "partials/vendor";
-
-// アプリケーション全体の設定
-@import "partials/layouts";
-
-

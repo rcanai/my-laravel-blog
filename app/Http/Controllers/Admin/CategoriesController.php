@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
@@ -8,6 +8,6 @@ class CategoriesController extends Controller
 {
     public function __construct()
     {
-        parent::shareConstants();
+        parent::initialize();
     }
 }

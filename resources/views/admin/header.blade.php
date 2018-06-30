@@ -11,7 +11,7 @@
           <a href="{{url('/')}}">@lang('route.home')</a>
         </li>
         <li>
-          <a href="{{url('accounts')}}">@lang('route.blogs')</a>
+          <a href="{{url('posts')}}">@lang('route.posts')</a>
         </li>
         <li>
           <a href="{{url('accounts')}}">@lang('route.accounts')</a>

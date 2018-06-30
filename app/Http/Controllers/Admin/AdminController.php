@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-        parent::shareConstants();
+        parent::initialize();
     }
 
     public function index()
