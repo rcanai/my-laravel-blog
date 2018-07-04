@@ -1,4 +1,4 @@
-@extends('_layouts.master')
+@extends('admin.master')
 
 @section('title')
 @lang('label.style_example') |&nbsp;
@@ -9,7 +9,8 @@
   #style-example {
     padding: 1rem;
   }
-  #style-example *:not(p) {
+  #style-example button,
+  #style-example section {
     margin-bottom: 0.5rem;
   }
   section > h1 {
@@ -227,7 +228,7 @@
   </section>
   <hr>
   <section>
-    <h1>Framework</h1>
+    <h1>Framework #1</h1>
     <div>
       <h2>Custom radio</h2>
       <label class="custom-radio">
@@ -257,6 +258,30 @@
         <input type="checkbox" name="custom-checkbox" disabled>
         <span></span>Checkbox
       </label>
+    </div>
+  </section>
+  <section>
+    <h1>Framework #2</h1>
+    <div>
+      <h2>Tab</h2>
+      <div class="tab">
+        <ul class="tab-head">
+          <li class="tab-head-item is-active">
+            <p>Item1</p>
+          </li>
+           <li class="tab-head-item">
+            <p>Item2</p>
+          </li>
+          <li class="tab-head-item">
+            <p>Item3</p>
+          </li>
+        </ul>
+        <div class="tab-body">
+          <p>Tab body</p>
+          <p>Tab body</p>
+          <p>Tab body...</p>
+        </div>
+      </div>
     </div>
   </section>
 

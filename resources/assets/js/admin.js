@@ -41,7 +41,6 @@ axios.defaults.baseURL = $apiUrl.val();
 $apiUrl.remove();
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 axios.defaults.method = 'get';
-axios.defaults.data = {};
 axios.defaults.timeout = 5000;
 axios.defaults._dummy = 'dummy';
 
@@ -52,7 +51,10 @@ if (token) {
 
 axios.interceptors.request.use((config) => {
   // Laravelに合わせて_methodパラメーターの初期値を設定
-  if (config.method !== 'get') {
+  if (config.method !== 'get' && config.headers['Content-Type'] !== 'multipart/form-data') {
+    if (!config.data) {
+      config.data = {};
+    }
     config.data._method = config.data._method || config.method;
   }
   return config;
@@ -152,6 +154,7 @@ const Utility = {
     element.style.top = document.documentElement.scrollTop + 80 + 'px';
 
     function dragMouseDown (e) {
+      e.stopPropagation();
       if (handleClasses.length > 0) {
         const classNames = (e.target.className || '').split(' ');
         const handles = classNames.filter((className) => {

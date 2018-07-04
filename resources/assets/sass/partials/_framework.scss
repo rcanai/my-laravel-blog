@@ -164,6 +164,41 @@
 }
 
 //
+// tab
+//
+.tab {
+  display: block;
+  position: relative;
+  .tab-head {
+    margin: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    .tab-head-item {
+      padding: .5rem;
+      border-radius: .25rem .25rem 0 0;
+      font-weight: bold;
+      margin-bottom: -1px;
+      cursor: pointer;
+      &:hover {
+        color: $color-primary;
+      }
+      &.is-active {
+        border: 1px solid $color-gray;
+        border-bottom: 1px solid $color-light;
+        color: $color-primary;
+        z-index: 1;
+      }
+    }
+  }
+  .tab-body {
+    padding: .5rem;
+    border: 1px solid $color-gray;
+    border-radius: 0 .25rem .25rem .25rem;
+  }
+}
+
+//
 // #top
 //
 #move-page-top {
