@@ -9,6 +9,7 @@ return [
     'selected_removes' => '選択行削除',
     // 共通カラム
     'deleted' => '削除',
+    'name' => '名称',
     'phonetic' => 'フリガナ',
     'email' => 'メールアドレス',
     'password' => 'パスワード',

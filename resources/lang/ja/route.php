@@ -6,4 +6,5 @@ return [
     'logout' => 'ログアウト',
     'accounts' => 'アカウント',
     'posts' => '記事',
+    'categories' => 'カテゴリー',
 ];

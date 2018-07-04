@@ -11,6 +11,8 @@ mix
   .js('resources/assets/js/admin/accounts/edit.js', 'js/admin/accounts')
   .js('resources/assets/js/admin/posts/index.js', 'js/admin/posts')
   .js('resources/assets/js/admin/posts/edit.js', 'js/admin/posts')
+  .js('resources/assets/js/admin/categories/index.js', 'js/admin/categories')
+  .js('resources/assets/js/admin/categories/edit.js', 'js/admin/categories')
   /* Common & Vendors */
   .js('resources/assets/js/app.js', 'js')
   .js('resources/assets/js/admin.js', 'js')

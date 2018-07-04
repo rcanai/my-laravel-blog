@@ -37,6 +37,10 @@ Route::get('posts', 'Admin\PostsController@index');
 Route::get('posts/edit', 'Admin\PostsController@edit');
 Route::get('posts/edit/{id}', 'Admin\PostsController@edit');
 
+// Categories
+Route::get('categories', 'Admin\CategoriesController@index');
+Route::get('categories/edit', 'Admin\CategoriesController@edit');
+Route::get('categories/edit/{id}', 'Admin\CategoriesController@edit');
 
 /*
 |--------------------------------------------------------------------------
@@ -59,4 +63,11 @@ Route::prefix('_api')->group(function () {
     Route::post('posts', 'Admin\PostsController@register');
     Route::put('posts', 'Admin\PostsController@register');
     Route::delete('posts', 'Admin\PostsController@removes');
+
+    // Categories
+    Route::get('categories', 'Admin\CategoriesController@fetch');
+    Route::get('categories/{id}', 'Admin\CategoriesController@fetch');
+    Route::post('categories', 'Admin\CategoriesController@register');
+    Route::put('categories', 'Admin\CategoriesController@register');
+    Route::delete('categories', 'Admin\CategoriesController@removes');
 });

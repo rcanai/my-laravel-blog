@@ -8,10 +8,10 @@
     <nav class="header-nav">
       <ul>
         <li>
-          <a href="{{url('/')}}">@lang('route.home')</a>
+          <a href="{{url('posts')}}">@lang('route.posts')</a>
         </li>
         <li>
-          <a href="{{url('posts')}}">@lang('route.posts')</a>
+          <a href="{{url('categories')}}">@lang('route.categories')</a>
         </li>
         <li>
           <a href="{{url('accounts')}}">@lang('route.accounts')</a>

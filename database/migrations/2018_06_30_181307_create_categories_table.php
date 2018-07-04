@@ -16,6 +16,7 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 191)->comment('名称')->default('');
+            $table->boolean('deleted')->comment('削除')->default(false);
             $table->timestamps();
         });
     }

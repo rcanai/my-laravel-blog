@@ -15,8 +15,7 @@
     ref="table-grid"
     selectable=" "
     :columns="[
-      { key: 'title',     name: '@lang("label.post.title")', width: 300 },
-      { key: 'content', name: '@lang("label.post.content")', width: 300 },
+      { key: 'name',  name: '@lang("label.name")', width: 300 },
       { key: 'updated_at',    name: '@lang("label.updated_at")', width: 150 },
     ]"
     @click-row="goEdit">
@@ -29,5 +28,5 @@
 @endsection
 
 @section('scripts')
-<script src="@assetTimestamp(js/admin/posts/index.js)"></script>
+<script src="@assetTimestamp(js/admin/categories/index.js)"></script>
 @endsection
