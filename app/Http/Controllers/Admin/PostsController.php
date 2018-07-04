@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\Category;
 use App\Http\Requests\Posts\RegisterRequest;
 
 class PostsController extends Controller
@@ -21,13 +22,15 @@ class PostsController extends Controller
 
     public function edit($id = 0)
     {
-        return view('admin.posts.edit', compact('id'));
+        $categories = Category::where('deleted', false)->get();
+
+        return view('admin.posts.edit', compact('id', 'categories'));
     }
 
     public function fetch($id = 0)
     {
         if (empty($id)) {
-            $posts = Post::where('deleted', false);
+            $posts = Post::with('category')->where('deleted', false);
             $posts->orderBy('updated_at', 'desc');
             return  $posts->get();
         } else {
@@ -51,6 +54,7 @@ class PostsController extends Controller
         $post->title = $request->title ?? '';
         $post->content_html = $request->content_html ?? '';
         $post->content = strip_tags($post->content_html);
+        $post->category_id = $request->category_id ?? 0;
         $post->deleted = $request->deleted ?? false;
 
         // 保存

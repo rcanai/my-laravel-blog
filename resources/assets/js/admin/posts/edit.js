@@ -5,7 +5,8 @@ const App = new Vue({
       post: {
         id: Number($('#post-id').val()),
         title: '',
-        content_html: ''
+        content_html: '',
+        category_id: 0
       }
     };
   },

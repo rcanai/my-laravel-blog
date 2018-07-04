@@ -25,6 +25,17 @@
       </label>
       <vue-editor class="form-control" v-model="post.content_html"></vue-editor>
     </div>
+    <div class="form-item item-full">
+      <label class="form-label">
+        @lang('label.categoy')</span>
+      </label>
+      <select class="form-control" v-model.number="post.category_id">
+        <option value="0">&nbsp;</option>
+        @foreach($categories as $category)
+          <option value="{{$category->id}}">{{$category->name}}</option>
+        @endforeach
+      </select>
+    </div>
   </div>
   <div>&nbsp;</div>
   <div class="form-item item-half">

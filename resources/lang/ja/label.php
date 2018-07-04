@@ -27,4 +27,6 @@ return [
     // 記事
     'post.title' => 'タイトル',
     'post.content' => '記事内容',
+    // カテゴリー
+    'categoy' => 'カテゴリー',
 ];

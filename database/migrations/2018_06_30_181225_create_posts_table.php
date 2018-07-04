@@ -14,10 +14,11 @@ class CreatePostsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('title', 191)->comment('タイトル')->default('');
             $table->longText('content')->comment('内容')->default(null)->nullable();
             $table->longText('content_html')->comment('内容')->default(null)->nullable();
+            $table->bigInteger('category_id')->comment('カテゴリー')->default(0);
             $table->boolean('deleted')->comment('削除')->default(false);
             $table->timestamps();
         });
