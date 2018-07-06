@@ -4,7 +4,7 @@
       :value="value"
       @input="updateValue($event.target.value)"
       @change="updateValue($event.target.value)"
-      :rows="rows"
+      :rows="textAreaRows"
       columns="0"
       class="autotextarea-input"
       ></textarea>
@@ -20,12 +20,17 @@ export default Vue.extend({
     value: {
       default: '',
       type: String
+    },
+    rows: {
+      default: 4,
+      type: Number
     }
   },
   computed: {
-    rows () {
+    textAreaRows () {
+      const rows = Number(this.rows);
       const num = this.value.split('\n').length;
-      return (num > 4) ? num : 4;
+      return (num > rows) ? num : rows;
     }
   },
   methods: {
@@ -39,9 +44,10 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .autotextarea {
-  display: inline-block;
+  display: block;
   .autotextarea-input {
-    overflow-y: scroll;
+    resize: none;
+    overflow-y: hidden;
     width: 100%;
   }
 }
