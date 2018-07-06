@@ -11,6 +11,12 @@
   @yield('styles')
 </head>
 <body>
-  @yield('content')
+  @include('_layouts.header')
+  <main>
+    @yield('content')
+  </main>
+  @include('_layouts.footer')
+  <script src="@assetTimestamp(js/app.js)"></script>
+  @yield('scripts')
 </body>
 </html>

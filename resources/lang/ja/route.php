@@ -7,4 +7,5 @@ return [
     'accounts' => 'アカウント',
     'posts' => '記事',
     'categories' => 'カテゴリー',
+    'archives' => '記事一覧',
 ];
