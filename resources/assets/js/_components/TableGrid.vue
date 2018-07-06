@@ -139,7 +139,7 @@
                 @change="changeInput($event, column, row.id)"
                 :value="cellInputValue(column.key, row.id)"
                 style="padding:0;width:100%;height:auto;">
-              <div v-else>{{row[column.key]}}</div>
+              <div v-else v-html="row[column.key]"></div>
               </td>
           </tr>
         </tbody>

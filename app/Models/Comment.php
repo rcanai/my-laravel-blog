@@ -18,6 +18,8 @@ class Comment extends Model
 
     public function post()
     {
-        $this->belongsTo(Post::class, 'post_id', 'id');
+        return $this->belongsTo(Post::class, 'post_id', 'id')->withDefault([
+            'id' => 0
+        ]);
     }
 }

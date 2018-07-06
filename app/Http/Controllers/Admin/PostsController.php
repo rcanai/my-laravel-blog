@@ -30,8 +30,10 @@ class PostsController extends Controller
     public function fetch($id = 0)
     {
         if (empty($id)) {
-            $posts = Post::with('category')->where('deleted', false);
-            $posts->orderBy('updated_at', 'desc');
+            $posts = Post::select('posts.*', 'categories.name as category_name');
+            $posts->leftJoin('categories', 'posts.category_id', '=', 'categories.id');
+            $posts->where('posts.deleted', false);
+            $posts->orderBy('posts.updated_at', 'desc');
             return  $posts->get();
         } else {
             $post = Post::find($id);
