@@ -18,18 +18,15 @@
       <ul>
         @foreach($posts as $post)
         <li>
-          <p>{{ $post->title }}</p>
+          <a href="{{url('archives', $post->id)}}">{{ $post->title }}</a>
+          <div>{!! $post->content_html !!}</div>
         </li>
         @endforeach
       </ul>
     </section>
     <footer>
-      <ol>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-      </ol>
+      {{-- ページネーション --}}
+      {{$posts->links()}}
     </footer>
   </article>
 </div>

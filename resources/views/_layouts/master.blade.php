@@ -18,6 +18,8 @@
     @yield('content')
   </main>
 
+  @include('_layouts.aside')
+
   @include('_layouts.footer')
 
   {{-- manifestだけを読み込めばvuejsなどは入ってこない --}}

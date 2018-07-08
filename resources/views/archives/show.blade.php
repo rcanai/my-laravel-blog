@@ -11,6 +11,7 @@
 @section('content')
 <div>{{$post->title}}</div>
 <div>{!! $post->content_html !!}</div>
+<a href="{{url('archives')}}">@lang('記事一覧へ')</a>
 @endsection
 
 @section('scripts')
