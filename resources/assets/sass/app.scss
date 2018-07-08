@@ -3,3 +3,24 @@
 
 // ミックスイン
 @import "partials/mixin";
+
+// リセット
+@import "partials/minireset";
+
+// リセット
+@import "partials/typography";
+
+//
+// 全体のレイアウト
+//
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  background-color: $color-light;
+  color: $color-dark;
+}

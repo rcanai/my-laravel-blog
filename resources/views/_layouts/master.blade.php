@@ -11,12 +11,19 @@
   @yield('styles')
 </head>
 <body>
+
   @include('_layouts.header')
+
   <main>
     @yield('content')
   </main>
+
   @include('_layouts.footer')
-  <script src="@assetTimestamp(js/app.js)"></script>
+
+  {{-- manifestだけを読み込めばvuejsなどは入ってこない --}}
+  <script src="@assetTimestamp(js/manifest.js)" defer></script>
+  <script src="@assetTimestamp(js/app.js)" defer></script>
   @yield('scripts')
+
 </body>
 </html>

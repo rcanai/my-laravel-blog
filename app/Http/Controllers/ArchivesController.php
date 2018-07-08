@@ -15,7 +15,11 @@ class ArchivesController extends Controller
 
     public function index()
     {
-        return view('archives.index');
+        $posts = Post::with('category');
+        $posts->where('deleted', false);
+        $posts->orderBy('created_at', 'desc');
+        $posts = $posts->get();
+        return view('archives.index', compact('posts'));
     }
 
     public function show($id = 0)
