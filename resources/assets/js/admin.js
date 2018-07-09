@@ -1,4 +1,5 @@
 import 'babel-polyfill';
+import $ from 'jquery/dist/jquery.slim.min';
 import Vue from 'vue';
 import axios from 'axios';
 
@@ -192,6 +193,7 @@ const Utility = {
   }
 };
 
+// Utilityをグローバルに設定
 window.Utility = Utility;
 
 // ページ上部に移動
@@ -208,3 +210,6 @@ window.Utility = Utility;
 //     $movePageTop.removeClass('show');
 //   }
 // });
+
+// jQueryをグローバルに設定
+window.$ = $;

@@ -19,11 +19,16 @@ class Post extends Model
 
     public function comments()
     {
-        return $this->hasMany(Comment::class, 'post_id', 'id');
+        return $this
+            ->hasMany(Comment::class, 'post_id', 'id')
+            ->select('id', 'content');
     }
 
     public function category()
     {
-        return $this->belongsTo(Category::class, 'category_id', 'id')->withDefault();
+        return $this
+            ->belongsTo(Category::class, 'category_id', 'id')
+            ->select('id', 'name', 'deleted')
+            ->withDefault();
     }
 }

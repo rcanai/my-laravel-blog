@@ -126,6 +126,9 @@
     &.item-half {
       width: 50%;
     }
+    &.item-3quarter {
+      width: 75%;
+    }
     &.item-full {
       width: 100%;
     }
@@ -137,11 +140,14 @@
       margin-bottom: .1rem;
     }
     .form-control {
+      &.control-quarter {
+        width: 25%;
+      }
       &.control-half {
         width: 50%;
       }
-      &.control-quarter {
-        width: 25%;
+      &.control-3quarter {
+        width: 75%;
       }
     }
     input.form-control,

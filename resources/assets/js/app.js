@@ -1,2 +1,2 @@
-import $ from 'jquery/dist/jquery.slim.min';
-console.log($);
+import $ from 'jquery';
+window.$ = $;

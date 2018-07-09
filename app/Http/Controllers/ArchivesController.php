@@ -30,7 +30,7 @@ class ArchivesController extends Controller
 
     public function show($id = 0)
     {
-        $post = Post::with('category')->find($id);
+        $post = Post::with(['category', 'comments'])->find($id);
         if (empty($post)) {
             abort('404');
         }

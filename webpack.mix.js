@@ -6,6 +6,8 @@ mix.setPublicPath('public');
 // JavaScript
 mix
   .js('resources/assets/js/home.js', 'js')
+  .js('resources/assets/js/archives/show.js', 'js/archives')
+  // admin
   .js('resources/assets/js/admin/index.js', 'js/admin')
   .js('resources/assets/js/admin/accounts/index.js', 'js/admin/accounts')
   .js('resources/assets/js/admin/accounts/edit.js', 'js/admin/accounts')
@@ -18,6 +20,7 @@ mix
   .js('resources/assets/js/admin.js', 'js')
   .extract(
     [
+      'jquery/dist/jquery.slim.min',
       'babel-polyfill',
       'vue',
       'i18next',
@@ -38,11 +41,6 @@ mix
   .sass('resources/assets/sass/home.scss', 'css')
   .sass('resources/assets/sass/auth.scss', 'css')
 ;
-
-// jqueryを設定
-mix.autoload({
-  'jquery/dist/jquery.slim.min': ['$', 'window.jQuery', 'window.$']
-});
 
 // OSのコンパイル完了通知を抑制
 mix.disableNotifications();
