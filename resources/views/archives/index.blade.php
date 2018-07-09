@@ -17,11 +17,11 @@
     <section>
       <ul>
         @foreach($posts as $post)
-        <li>
-          <a href="{{url('archives', $post->id)}}">{{ $post->title }}</a>
-          <time datetime="{{$post->updated_at}}">{{$post->updated_at->format('Y/m/d H:i:s')}}</time>
-          <div>{!! $post->content_html !!}</div>
-        </li>
+          <li>
+            <a href="{{url('archives', $post->id)}}">{{ $post->title }}</a>
+            <time datetime="{{$post->updated_at}}">{{$post->updated_at->format('Y/m/d H:i:s')}}</time>
+            <div>{!! $post->content_html !!}</div>
+          </li>
         @endforeach
       </ul>
     </section>

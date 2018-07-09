@@ -5,7 +5,7 @@
 @endsection
 
 @section('styles')
-{{--  --}}
+<link href="@assetTimestamp(css/home.css)" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -17,15 +17,15 @@
     <section>
       <ul>
         @foreach($posts as $post)
-        <li>
-          <a href="{{url('archives', $post->id)}}">{{ $post->title }}</a>
-          <div>{!! $post->content_html !!}</div>
-        </li>
+          <li>
+            <a href="{{url('archives', $post->id)}}">{{ $post->title }}</a>
+            <div>{!! $post->content_html !!}</div>
+          </li>
         @endforeach
       </ul>
     </section>
     <footer>
-      {{--  --}}
+      <a href="{{url('archives')}}">@lang('label.show_more')</a>
     </footer>
   </article>
 </div>

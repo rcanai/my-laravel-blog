@@ -1,7 +1,11 @@
 <aside>
   <ul>
     @foreach($categories as $category)
-      <li>{{$category->name}}</li>
+      <li>
+        <a href="{{url('archives')}}">
+          {{$category->name}}
+        </a>
+      </li>
     @endforeach
   </ul>
 </aside>

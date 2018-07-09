@@ -47,6 +47,10 @@ Route::get('categories', 'Admin\CategoriesController@index');
 Route::get('categories/edit', 'Admin\CategoriesController@edit');
 Route::get('categories/edit/{id}', 'Admin\CategoriesController@edit');
 
+// Comment (通常のリクエスト)
+Route::post('comment', 'CommentsController@comment');
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes

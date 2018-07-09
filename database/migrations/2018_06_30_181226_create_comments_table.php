@@ -15,8 +15,8 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('author', 191)->comment('投稿者')->default('');
             $table->bigInteger('post_id')->comment('記事ID')->default(0);
+            $table->string('author', 191)->comment('投稿者')->default('');
             $table->longText('content')->comment('内容')->default(null)->nullable();
             $table->timestamps();
         });

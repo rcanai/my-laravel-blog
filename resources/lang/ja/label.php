@@ -7,6 +7,8 @@ return [
     'register' => '登録',
     'back' => '戻る',
     'selected_removes' => '選択行削除',
+    'send' => '送信',
+    'show_more' => 'もっと見る',
     // 共通カラム
     'deleted' => '削除',
     'name' => '名称',
@@ -21,6 +23,7 @@ return [
     'description' => '説明',
     'login_id' => 'ログインID',
     'updated_at' => '更新日時',
+    'content' => '内容',
     // アカウント
     'account.name' => '氏名',
     'account.account_type' => '種類',
@@ -29,4 +32,6 @@ return [
     'post.content' => '記事内容',
     // カテゴリー
     'categoy' => 'カテゴリー',
+    // コメント
+    'comment.post_id' => '記事',
 ];
