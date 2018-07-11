@@ -151,7 +151,8 @@
 // [参考](https://jp.vuejs.org/v2/examples/grid-component.html)
 /*
 Publicメソッド
-  - [set]    setRows(): void
+  - [set]    setRows(rows): void
+  - [set]    setSingleSelectedId(rowId): void
   - [get]    getRows(): Array<Object>
   - [get]    getRow( rowId: number): Array
   - [get]    getRowByIndex(index: number): Object
