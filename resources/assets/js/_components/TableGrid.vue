@@ -3,8 +3,7 @@
     class="div-table-grid"
     @mousemove="columnResizeMove($event)"
     @mouseleave="componentLeave($event)"
-    @mouseup="columnResizeEnd($event)"
-    v-bind:style="{'width': width, 'min-height': minHeight}">
+    @mouseup="columnResizeEnd($event)">
     <div
       v-if="!!mouseLeft"
       class="table-grid-drag-bar"
@@ -92,8 +91,8 @@
               <input
                 type="radio"
                 :name="gridId +'-radio'"
-                v-model="singleSelectedId"
                 :value="row.id"
+                :checked="singleSelectedId === row.id"
                 @click.stop="changeSingleSelect(row.id)">
             </td>
             <!-- checkbox -->
@@ -224,14 +223,17 @@ export default Vue.extend({
       type: String
     },
     // グリッド全体の最小の高さ
-    minHeight: {
+    height: {
       default: '300px',
       type: String
     },
     // 1ページの行数
     pageRowCount: {
       default: 20,
-      type: Number
+      type: Number,
+      validator (val) {
+        return val > 0;
+      }
     },
     // ページネーションの最大値
     maxPagination: {
@@ -336,6 +338,10 @@ export default Vue.extend({
         this.$set(row, '_selected', false);
       });
       this.rows = rows;
+    },
+    // public: 単一選択行を設定
+    setSingleSelectedId (rowId) {
+      this.singleSelectedId = rowId;
     },
     // public: すべての行を取得
     getRows () {
