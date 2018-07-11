@@ -153,10 +153,14 @@ const Utility = {
     }
 
     if (center) {
-      element.style.position = 'fixed';
-      element.style.top = document.documentElement.scrollTop + 'px';
+      // jquery使います
+      // TODO: これをネイティブで書きたい
+      const $el = $(element);
+      $el.css('position', 'fixed');
+      const fixedTop = $el.offset().top;
+      $el.css('position', 'absolute');
+      $el.offset({top: fixedTop});
     }
-    element.style.position = 'absolute';
 
     function dragMouseDown (e) {
       e.stopPropagation();
