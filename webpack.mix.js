@@ -53,15 +53,16 @@ mix.webpackConfig({
       '@scss': __dirname + '/resources/assets/scss',
     }
   },
-})
+});
 
 // 開発環境のみの設定
 if (!mix.inProduction()) {
   mix.webpackConfig({
     devtool: 'inline-source-map',
-    watchOptions: {
-      poll: 300 /* Vagrant error avoidance */
-    },
+    // watch-pollで同じことを再現できるためコメントアウト
+    // watchOptions: {
+    //   poll: true
+    // },
     module: {
       rules: [{
         test: /\.(js|vue)$/,

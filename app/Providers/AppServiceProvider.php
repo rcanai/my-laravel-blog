@@ -21,8 +21,8 @@ class AppServiceProvider extends ServiceProvider
             return asset($filePath) . '?ts=' . time();
         });
 
-         // SQLのログを残す
-         \DB::listen(function ($query) {
+        // SQLのログを残す
+        \DB::listen(function ($query) {
             $sql = $query->sql;
             for ($i = 0; $i < count($query->bindings); $i++) {
                 $sql = preg_replace("/\?/", $query->bindings[$i], $sql, 1);
