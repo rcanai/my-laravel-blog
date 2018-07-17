@@ -14,8 +14,10 @@
 
   @include('_layouts.header')
 
-  <main>
-    @yield('content')
+  <main id="main">
+    <div class="container">
+      @yield('content')
+    </div>
   </main>
 
   @include('_layouts.aside')

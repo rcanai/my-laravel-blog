@@ -25,9 +25,14 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('style-example', 'HomeController@styleExample')->name('styleExample');
 
 // Archives
-Route::get('archives', 'ArchivesController@index');
+Route::get('archives', 'ArchivesController@index')->name('archives');
 Route::get('archives/{id}', 'ArchivesController@show');
 
+// Search
+Route::get('search', 'ArchivesController@search')->name('search');
+
+// Contact
+Route::get('contact', 'ContactsController@index')->name('contact');
 
 // Admin
 Route::get('admin', 'Admin\AdminController@index');

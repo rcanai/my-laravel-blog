@@ -8,4 +8,6 @@ return [
     'posts' => '記事',
     'categories' => 'カテゴリー',
     'archives' => '記事一覧',
+    'search' => '検索',
+    'contact' => 'お問い合わせ',
 ];

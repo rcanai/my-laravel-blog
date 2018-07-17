@@ -1,15 +1,20 @@
-<header>
-  <div>
-    <a href="{{url('/')}}">My Laravel blog</a>
+<header id="header">
+  <div class="container">
+    <div class="app-title">
+      <a href="{{url('/')}}">My Laravel blog</a>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a href="{{route('archives')}}">@lang('route.archives')</a>
+        </li>
+        <li>
+          <a href="{{route('search')}}">@lang('route.search')</a>
+        </li>
+        <li>
+          <a href="{{route('contact')}}">@lang('route.contact')</a>
+        </li>
+      </ul>
+    </nav>
   </div>
-  <nav>
-    <ul>
-      <li>
-        <a href="#">a</a>
-      </li>
-      <li>
-        <a href="#">b</a>
-      </li>
-    </ul>
-  </nav>
 </header>

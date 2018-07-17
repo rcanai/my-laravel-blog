@@ -36,4 +36,9 @@ class ArchivesController extends Controller
         }
         return view('archives.show', compact('post'));
     }
+
+    public function search()
+    {
+        return;
+    }
 }
