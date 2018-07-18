@@ -13,6 +13,7 @@ import langJA from '@js/_lang/ja.js';
 import DatePicker from '@js/_components/DatePicker.vue';
 import MonthPicker from '@js/_components/MonthPicker.vue';
 import TimePicker from '@js/_components/TimePicker.vue';
+import FileInput from '@js/_components/FileInput.vue';
 import { VueEditor } from 'vue2-editor';
 
 // Vueの初期設定
@@ -21,6 +22,7 @@ Vue.config.productionTip = false;
 Vue.component('date-picker', DatePicker);
 Vue.component('month-picker', MonthPicker);
 Vue.component('time-picker', TimePicker);
+Vue.component('file-input', FileInput);
 Vue.component('vue-editor', VueEditor);
 
 window.Vue = Vue;

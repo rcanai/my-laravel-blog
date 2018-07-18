@@ -31,6 +31,12 @@ const App = new Vue({
     },
     back () {
       history.back();
+    },
+    fileUploaded (files) {
+      files.forEach((file) => {
+        const cursorLocation = this.$refs['post-editor'].quill.cursorLocation;
+        this.$refs['post-editor'].quill.insertEmbed(cursorLocation, 'image', file.url);
+      });
     }
   },
   mounted () {

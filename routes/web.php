@@ -35,7 +35,7 @@ Route::get('search', 'ArchivesController@search')->name('search');
 Route::get('contact', 'ContactsController@index')->name('contact');
 
 // Admin
-Route::get('admin', 'Admin\AdminController@index');
+Route::get('admin', 'Admin\AdminController@index')->name('admin');
 
 // Accounts
 Route::get('accounts', 'Admin\AccountsController@index');
@@ -55,6 +55,8 @@ Route::get('categories/edit/{id}', 'Admin\CategoriesController@edit');
 // Comment (通常のリクエスト)
 Route::post('comment', 'CommentsController@comment');
 
+// Files
+Route::get('files/{name}', 'FilesController@show');
 
 /*
 |--------------------------------------------------------------------------
@@ -84,4 +86,7 @@ Route::prefix('_api')->group(function () {
     Route::post('categories', 'Admin\CategoriesController@register');
     Route::put('categories', 'Admin\CategoriesController@register');
     Route::delete('categories', 'Admin\CategoriesController@removes');
+
+    // Files
+    Route::post('files', 'FilesController@upload');
 });

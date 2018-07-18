@@ -14,6 +14,9 @@
         <li>
           <a href="{{route('contact')}}">@lang('route.contact')</a>
         </li>
+        <li>
+          <a href="{{route('admin')}}">@lang('route.admin')</a>
+        </li>
       </ul>
     </nav>
   </div>

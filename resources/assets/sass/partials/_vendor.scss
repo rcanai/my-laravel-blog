@@ -18,9 +18,9 @@
         height: auto !important;
       }
     }
-    .ql-link,
     .ql-image,
     .ql-video {
+      // 動画と画像の挿入は無効
       display: none !important;
     }
   }

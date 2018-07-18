@@ -10,6 +10,7 @@ use App\Libraries\Http\ControllerLibrary;
 class ArchivesController extends Controller
 {
     protected const PAGE_POST_COUNT = 10;
+
     private $library;
 
     public function __construct(ControllerLibrary $library)

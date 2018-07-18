@@ -31,7 +31,7 @@ return [
     'post.title' => 'タイトル',
     'post.content' => '記事内容',
     // カテゴリー
-    'categoy' => 'カテゴリー',
+    'category' => 'カテゴリー',
     // コメント
     'comment.post_id' => '記事',
 ];
