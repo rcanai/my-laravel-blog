@@ -29,10 +29,13 @@ class CategoriesController extends Controller
         if (empty($id)) {
             $categories = Category::where('deleted', false);
             $categories->orderBy('updated_at', 'desc');
-            return  $categories->get();
+            return $categories->get();
         } else {
             $category = Category::find($id);
-            return  $category;
+            if (empty($category)) {
+                abort('404');
+            }
+            return $category;
         }
     }
 
@@ -54,7 +57,7 @@ class CategoriesController extends Controller
         // 保存
         $category->save();
 
-        return  $category;
+        return $this->fetch($category->id);
     }
 
     public function removes()

@@ -9,6 +9,7 @@ return [
     'selected_removes' => '選択行削除',
     'send' => '送信',
     'show_more' => 'もっと見る',
+    'urge_selection_image' => '画像を選択してください',
     // 共通カラム
     'deleted' => '削除',
     'name' => '名称',

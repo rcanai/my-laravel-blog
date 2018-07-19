@@ -5,13 +5,18 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\PostImage;
 use App\Models\Category;
 use App\Http\Requests\Posts\RegisterRequest;
+use App\Libraries\Http\ControllerLibrary;
 
 class PostsController extends Controller
 {
-    public function __construct()
+    private $library;
+
+    public function __construct(ControllerLibrary $library)
     {
+        $this->library = $library;
         parent::initialize();
     }
 
@@ -34,10 +39,13 @@ class PostsController extends Controller
             $posts->leftJoin('categories', 'posts.category_id', '=', 'categories.id');
             $posts->where('posts.deleted', false);
             $posts->orderBy('posts.updated_at', 'desc');
-            return  $posts->get();
+            return $posts->get();
         } else {
             $post = Post::find($id);
-            return  $post;
+            if (empty($post)) {
+                abort('404');
+            }
+            return $post;
         }
     }
 
@@ -62,7 +70,20 @@ class PostsController extends Controller
         // 保存
         $post->save();
 
-        return  $post;
+        // 既存の画像レコードをすべて消す
+        PostImage::where('post_id', $post->id)->delete();
+
+        // 画像のURLを保存
+        $urls = $this->library->getImgUrls($post->content_html);
+        foreach ($urls as $url) {
+            $postImage = new PostImage();
+            $postImage->post_id = $post->id;
+            $postImage->url = $url;
+            $postImage->save();
+        }
+
+        // 登録した記事を返す
+        return $this->fetch($post->id);
     }
 
     public function removes()

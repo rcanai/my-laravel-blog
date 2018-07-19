@@ -23,12 +23,15 @@
       <label class="form-label">
         @lang('label.post.content')<span class="required">@lang('*')</span>
       </label>
-      <file-input @uploaded="fileUploaded"></file-input>
       <vue-editor
         id="post-editor"
         ref="post-editor"
         class="form-control"
         v-model="post.content_html"></vue-editor>
+      <file-input
+        @uploaded="fileUploaded"
+        label="@lang('label.urge_selection_image')"
+        :types="['image']"></file-input>
     </div>
     <div class="form-item item-full">
       <label class="form-label">

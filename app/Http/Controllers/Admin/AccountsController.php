@@ -33,6 +33,9 @@ class AccountsController extends Controller
             return  $accounts->get();
         } else {
             $account = Account::find($id);
+            if (empty($account)) {
+                abort('404');
+            }
             return  $account;
         }
     }
@@ -65,7 +68,7 @@ class AccountsController extends Controller
         // 保存
         $account->save();
 
-        return  $account;
+        return $this->fetch($account->id);
     }
 
     public function removes()
