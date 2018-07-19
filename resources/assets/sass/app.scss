@@ -130,3 +130,45 @@ body {
     text-align: center;
   }
 }
+
+.post-list {
+  .post-list-item {
+    padding: 1rem;
+    border-bottom: 1px solid rgba($color-dark, .3);
+    &:first-child {
+      border-top: 1px solid rgba($color-dark, .3);
+    }
+  }
+  .post-images {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: hidden;
+    padding: .5rem;
+    img {
+      width: 8rem;
+      height: 100%;
+      border-radius: .25rem;
+    }
+  }
+  .post-content {
+    padding: .5rem;
+  }
+}
+
+.single-post {
+  min-height: 60vh;
+  .single-post-content {
+    padding: .5rem 0;
+  }
+  .single-post-comment-list {
+    .single-post-comment-list-item {
+      border-top: 1px solid rgba($color-dark, .3);
+      padding: .5rem 0;
+    }
+  }
+}
+
+.footer-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}

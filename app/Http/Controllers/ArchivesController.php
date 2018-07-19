@@ -22,7 +22,7 @@ class ArchivesController extends Controller
 
     public function index()
     {
-        $posts = Post::with('category');
+        $posts = Post::with(['category', 'images']);
         $posts->where('deleted', false);
         $posts->orderBy('created_at', 'desc');
         $posts = $posts->paginate(self::PAGE_POST_COUNT); // ページネーションを設定

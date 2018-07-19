@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Comment;
 use App\Models\Category;
+use App\Models\PostImage;
 
 class Post extends Model
 {
@@ -21,6 +22,12 @@ class Post extends Model
     {
         return $this
             ->hasMany(Comment::class, 'post_id', 'id');
+    }
+
+    public function images()
+    {
+        return $this
+            ->hasMany(PostImage::class, 'post_id', 'id');
     }
 
     public function category()

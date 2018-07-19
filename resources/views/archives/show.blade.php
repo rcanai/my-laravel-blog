@@ -9,18 +9,19 @@
 @endsection
 
 @section('content')
-<article>
+<article class="single-post">
   <header>
     <h1>{{$post->title}}</h1>
     <time datetime="{{$post->updated_at}}">{{$post->updated_at->format('Y/m/d H:i:s')}}</time>
   </header>
-  <section>
+  <section class="single-post-content">
     {!! $post->content_html !!}
   </section>
   <footer>
-    <ul>
+    <div class="footer-title">@lang('label.comments')</div>
+    <ul class="single-post-comment-list">
       @foreach($post->comments as $comment)
-        <li>
+        <li class="single-post-comment-list-item">
           <div class="comment-meta">
             <span class="comment-author">{{$comment->author}}</span>
             <time datetime="{{$comment->updated_at}}">{{$comment->updated_at->format('Y/m/d H:i:s')}}</time>
