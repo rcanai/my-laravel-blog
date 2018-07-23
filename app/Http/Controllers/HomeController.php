@@ -19,10 +19,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $posts = Post::with('category');
-        $posts->where('deleted', false);
-        $posts->orderBy('created_at', 'desc');
-        $posts = $posts->limit(10)->get();
+        $posts = $this->library->getPublishedPosts();
         return view('home', compact('posts'));
     }
 

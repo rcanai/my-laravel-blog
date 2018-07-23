@@ -6,6 +6,9 @@
     <nav>
       <ul>
         <li>
+          <a href="{{route('home')}}">@lang('route.home')</a>
+        </li>
+        <li>
           <a href="{{route('archives')}}">@lang('route.archives')</a>
         </li>
         <li>

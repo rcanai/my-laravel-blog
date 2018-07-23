@@ -6,6 +6,7 @@ const App = new Vue({
         id: Number($('#post-id').val()),
         title: '',
         content_html: '',
+        published_at: moment().format('YYYY-MM-DD HH:mm'),
         category_id: 0
       }
     };

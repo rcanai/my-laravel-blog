@@ -9,6 +9,7 @@ use App\Models\PostImage;
 use App\Models\Category;
 use App\Http\Requests\Posts\RegisterRequest;
 use App\Libraries\Http\ControllerLibrary;
+use Carbon\Carbon;
 
 class PostsController extends Controller
 {
@@ -38,7 +39,7 @@ class PostsController extends Controller
             $posts = Post::select('posts.*', 'categories.name as category_name');
             $posts->leftJoin('categories', 'posts.category_id', '=', 'categories.id');
             $posts->where('posts.deleted', false);
-            $posts->orderBy('posts.updated_at', 'desc');
+            $posts->orderBy('posts.published_at', 'desc');
             return $posts->get();
         } else {
             $post = Post::find($id);
@@ -65,6 +66,9 @@ class PostsController extends Controller
         $post->content_html = $request->content_html ?? '';
         $post->content = strip_tags($post->content_html);
         $post->category_id = $request->category_id ?? 0;
+        if (isset($request->published_at)) {
+            $post->published_at = Carbon::parse($request->published_at);
+        }
         $post->deleted = $request->deleted ?? false;
 
         // 保存

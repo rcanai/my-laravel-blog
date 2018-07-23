@@ -205,34 +205,6 @@
 }
 
 //
-// #top
-//
-#move-page-top {
-  position: fixed;
-  opacity: 0;
-  bottom: -4rem;
-  right: 1rem;
-  width: 4rem;
-  height: 4rem;
-  padding-top: .5rem;
-  text-align: center;
-  background-color: $color-tertiary;
-  border-radius: 1rem;
-  box-shadow: .1rem .1rem .1rem $color-gray;
-  cursor: pointer;
-  z-index: 1000;
-  transition: opacity .3s ease-in-out, bottom .2s ease-in-out;
-  &.show {
-    opacity: .9;
-    bottom: 1rem;
-  }
-  img {
-    width: 3rem;
-    height: 3rem;
-  }
-}
-
-//
 // アラート
 //
 #alert {

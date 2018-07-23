@@ -6,7 +6,7 @@
       @change="textChange($event)"
       :disabled="disabled"
       :value="formattedValue"
-      maxlength="7">
+      :maxlength="foamrt.length">
     <div class="monthpicker-popup" v-if="isShow">
       <div class="monthpicker-header">
         <button

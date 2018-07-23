@@ -24,6 +24,8 @@
 
   @include('_layouts.footer')
 
+  @include('_layouts.move_page_top')
+
   {{-- manifestだけを読み込めばvuejsなどは入ってこない --}}
   <script src="@assetTimestamp(js/manifest.js)" defer></script>
   <script src="@assetTimestamp(js/app.js)" defer></script>

@@ -12,7 +12,7 @@
 <article class="single-post">
   <header>
     <h1>{{$post->title}}</h1>
-    <time datetime="{{$post->updated_at}}">{{$post->updated_at->format('Y/m/d H:i:s')}}</time>
+    <time datetime="{{$post->published_at}}">{{$post->published_at->format('Y/m/d H:i')}}</time>
   </header>
   <section class="single-post-content">
     {!! $post->content_html !!}
@@ -24,7 +24,7 @@
         <li class="single-post-comment-list-item">
           <div class="comment-meta">
             <span class="comment-author">{{$comment->author}}</span>
-            <time datetime="{{$comment->updated_at}}">{{$comment->updated_at->format('Y/m/d H:i:s')}}</time>
+            <time datetime="{{$comment->updated_at}}">{{$comment->updated_at->format('Y/m/d H:i')}}</time>
           </div>
           <div class="comment-content">
             {{$comment->content}}

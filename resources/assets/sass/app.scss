@@ -102,6 +102,9 @@ body {
   }
 }
 
+//
+// ページネーション
+//
 .pagination {
   display: flex;
   flex-flow: row nowrap;
@@ -131,6 +134,9 @@ body {
   }
 }
 
+//
+// 記事一覧
+//
 .post-list {
   .post-list-item {
     padding: 1rem;
@@ -155,6 +161,9 @@ body {
   }
 }
 
+//
+// 記事詳細
+//
 .single-post {
   min-height: 60vh;
   .single-post-content {
@@ -171,4 +180,44 @@ body {
 .footer-title {
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+//
+// 上部に移動
+//
+#move-page-top {
+  position: fixed;
+  opacity: 0;
+  bottom: -4rem;
+  right: 1rem;
+  width: 4rem;
+  height: 4rem;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  text-align: center;
+  background-color: $color-light;
+  border-radius: 50%;
+  box-shadow: 0 0 1rem $color-gray;
+  cursor: pointer;
+  z-index: 1000;
+  transition: opacity .3s ease-in-out, bottom .2s ease-in-out;
+  &:hover {
+    background-color: $color-tertiary;
+    transition: background-color .3s ease-in-out;
+    .arrow-top {
+      transition: border-color .3s ease-in-out;
+      border-color: $color-light $color-light transparent transparent;
+    }
+  }
+  &.show {
+    opacity: .9;
+    bottom: 1rem;
+  }
+  .arrow-top {
+    width: 2rem;
+    height: 2rem;
+    border: 1rem solid; // ここを減らすと三角の下部分が削れる
+    border-color: $color-tertiary $color-tertiary transparent transparent;
+    transform: rotate(-45deg);
+  }
 }

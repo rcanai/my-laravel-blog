@@ -35,6 +35,12 @@
     </div>
     <div class="form-item item-full">
       <label class="form-label">
+        @lang('label.published_at')<span class="required">@lang('*')</span>
+      </label>
+      <date-time-picker v-model="post.published_at"></date-time-picker>
+    </div>
+    <div class="form-item item-full">
+      <label class="form-label">
         @lang('label.categoy')</span>
       </label>
       <select class="form-control" v-model.number="post.category_id">

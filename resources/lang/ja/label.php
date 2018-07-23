@@ -26,6 +26,8 @@ return [
     'description' => '説明',
     'login_id' => 'ログインID',
     'updated_at' => '更新日時',
+    'created_at' => '作成日時',
+    'published_at' => '公開日時',
     'content' => '内容',
     // アカウント
     'account.name' => '氏名',

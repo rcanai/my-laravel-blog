@@ -18,7 +18,8 @@
       { key: 'title',     name: '@lang("label.post.title")', width: 300 },
       { key: 'content', name: '@lang("label.post.content")', width: 300 },
       { key: 'category_name', name: '@lang("label.category")', width: 150 },
-      { key: 'updated_at',    name: '@lang("label.updated_at")', width: 150 },
+      { key: 'published_at',    name: '@lang("label.published_at")', width: 150 },
+      { key: 'updated_at',    name: '@lang("label.updated_at")', width: 150 }
     ]"
     @click-row="goEdit">
     <template slot="actions">

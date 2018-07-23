@@ -9,8 +9,6 @@ use App\Libraries\Http\ControllerLibrary;
 
 class ArchivesController extends Controller
 {
-    protected const PAGE_POST_COUNT = 10;
-
     private $library;
 
     public function __construct(ControllerLibrary $library)
@@ -22,10 +20,7 @@ class ArchivesController extends Controller
 
     public function index()
     {
-        $posts = Post::with(['category', 'images']);
-        $posts->where('deleted', false);
-        $posts->orderBy('created_at', 'desc');
-        $posts = $posts->paginate(self::PAGE_POST_COUNT); // ページネーションを設定
+        $posts = $this->library->getPublishedPosts();
         return view('archives.index', compact('posts'));
     }
 

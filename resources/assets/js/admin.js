@@ -13,6 +13,7 @@ import langJA from '@js/_lang/ja.js';
 import DatePicker from '@js/_components/DatePicker.vue';
 import MonthPicker from '@js/_components/MonthPicker.vue';
 import TimePicker from '@js/_components/TimePicker.vue';
+import DateTimePicker from '@js/_components/DateTimePicker.vue';
 import FileInput from '@js/_components/FileInput.vue';
 import { VueEditor } from 'vue2-editor';
 
@@ -22,6 +23,7 @@ Vue.config.productionTip = false;
 Vue.component('date-picker', DatePicker);
 Vue.component('month-picker', MonthPicker);
 Vue.component('time-picker', TimePicker);
+Vue.component('date-time-picker', DateTimePicker);
 Vue.component('file-input', FileInput);
 Vue.component('vue-editor', VueEditor);
 
@@ -201,21 +203,6 @@ const Utility = {
 
 // Utilityをグローバルに設定
 window.Utility = Utility;
-
-// ページ上部に移動
-// $('body').on('click', '#move-page-top', (event) => {
-//   event.stopPropagation();
-//   document.body.scrollTop = document.documentElement.scrollTop = 0;
-// });
-
-// const $movePageTop = $('#move-page-top');
-// $(window).scroll((event) => {
-//   if ($(event.target).scrollTop() > 100) {
-//     $movePageTop.addClass('show');
-//   } else {
-//     $movePageTop.removeClass('show');
-//   }
-// });
 
 // jQueryをグローバルに設定
 window.$ = $;

@@ -1,14 +1,13 @@
 <template>
-  <div class="datepicker">
+  <div class="datetimepicker">
     <input
       type="text"
       @click.stop="showCalendar()"
       @change="textChange($event)"
       :disabled="disabled"
-      :value="formattedValue"
-      :maxlength="format.length">
-    <div class="datepicker-popup" v-if="isShow">
-      <div class="datepicker-header">
+      :value="formattedValue">
+    <div class="datetimepicker-popup" v-if="isShow">
+      <div class="datetimepicker-header">
         <button
           type="button"
           title="today"
@@ -17,7 +16,7 @@
         <button
           type="button"
           title="prev"
-          class="button-datepicker-move"
+          class="button-datetimepicker-move"
           @click="goPrev()">&lt;</button>
         <div>
           <select :value="currentYear" @change="changeYear($event.target.value)">
@@ -30,7 +29,7 @@
         </div>
         <button
           type="button"
-          class="button-datepicker-move"
+          class="button-datetimepicker-move"
           title="next"
           @click="goNext()">&gt;</button>
         <button
@@ -38,7 +37,7 @@
           title="close"
           @click="hideCalendar()">&times;</button>
       </div>
-      <div class="datepicker-calendar">
+      <div class="datetimepicker-calendar">
         <div
           v-for="head in headers"
           class="calendar-head"
@@ -66,14 +65,14 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'DatePicker',
+  name: 'DateTimePicker',
   props: {
     value: {
       default: '',
       type: String
     },
     format: {
-      default: 'YYYY-MM-DD',
+      default: 'YYYY-MM-DD HH:mm',
       type: String
     },
     disabled: {
@@ -82,7 +81,7 @@ export default Vue.extend({
     }
   },
   data () {
-    const systemFormat = 'YYYYMMDD';
+    const systemFormat = 'YYYY-MM-DD HH:mm';
     return {
       days: [],
       headers: [],
@@ -152,7 +151,18 @@ export default Vue.extend({
       }
     },
     selectDate (dayObject) {
-      this.updateValue(dayObject.systemFormat);
+      if (this.currentDateString) {
+        // 時刻を引き継ぐ
+        const oldDate = moment(this.currentDateString);
+        const newDate = moment(dayObject.systemFormat);
+        newDate.set('h', oldDate.get('hours'));
+        newDate.set('m', oldDate.get('minutes'));
+        const dateString = newDate.format(this.systemFormat);
+        this.updateValue(dateString);
+      } else {
+        // 値を更新
+        this.updateValue(dayObject.systemFormat);
+      }
       this.hideCalendar();
     },
     createDayObject (momentObject) {
@@ -224,17 +234,17 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.datepicker {
+.datetimepicker {
   display: inline-block;
   position: relative;
 }
-.datepicker * {
+.datetimepicker * {
   box-sizing: border-box;
 }
-.datepicker > input {
-  width: 8rem;
+.datetimepicker > input {
+  width: 12rem;
 }
-.datepicker .datepicker-popup {
+.datetimepicker .datetimepicker-popup {
   position: absolute;
   z-index: 999;
   background-color: #FFFFFF;
@@ -243,7 +253,7 @@ export default Vue.extend({
   border-radius: 0.2rem;
   box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.3);
 }
-.datepicker .datepicker-header {
+.datetimepicker .datetimepicker-header {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -251,15 +261,15 @@ export default Vue.extend({
   margin-bottom: 0.5rem;
   font-weight: bold;
 }
-.datepicker .datepicker-header > button {
+.datetimepicker .datetimepicker-header > button {
   font-weight: normal;
   background-color: #FFFFFF;
   color: #3a3a3a;
 }
-.datepicker .datepicker-header > button:hover {
+.datetimepicker .datetimepicker-header > button:hover {
   background-color: #e5e5e5;
 }
-.datepicker .datepicker-calendar {
+.datetimepicker .datetimepicker-calendar {
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
@@ -267,7 +277,7 @@ export default Vue.extend({
   min-height: 15rem;
   width: 20rem;
 }
-.datepicker .datepicker-calendar .calendar-head {
+.datetimepicker .datetimepicker-calendar .calendar-head {
   width: calc(20rem / 7.1);
   height: 1.5rem;
   line-height: 1.5rem;
@@ -275,13 +285,13 @@ export default Vue.extend({
   background-color: #e5e5e5;
   font-weight: bold;
 }
-.datepicker .datepicker-calendar .calendar-head:first-child {
+.datetimepicker .datetimepicker-calendar .calendar-head:first-child {
   color: #f74b42;
 }
-.datepicker .datepicker-calendar .calendar-head:nth-child(7) {
+.datetimepicker .datetimepicker-calendar .calendar-head:nth-child(7) {
   color: #415df7;
 }
-.datepicker .datepicker-calendar .calendar-cell {
+.datetimepicker .datetimepicker-calendar .calendar-cell {
   width: calc(20rem / 7.1);
   height: calc(20rem / 7.1);
   line-height: calc(20rem / 7.1);
@@ -298,16 +308,16 @@ export default Vue.extend({
 .calendar-cell.is-holiday {
   color: #415df7;
 }
-.datepicker .datepicker-calendar .calendar-cell:hover {
+.datetimepicker .datetimepicker-calendar .calendar-cell:hover {
   background-color: #BEE599 !important;
 }
-.datepicker .datepicker-calendar .calendar-cell.not-current-month {
+.datetimepicker .datetimepicker-calendar .calendar-cell.not-current-month {
   opacity: 0.3;
 }
-.datepicker .datepicker-calendar .calendar-cell.is-selected-date {
+.datetimepicker .datetimepicker-calendar .calendar-cell.is-selected-date {
   background-color: rgba(190, 229, 153, 0.4);
 }
-.datepicker .datepicker-calendar .calendar-cell.is-today {
+.datetimepicker .datetimepicker-calendar .calendar-cell.is-today {
   font-weight: bold;
   border: 0.1rem solid rgba(190, 229, 153, 0.6);
 }
