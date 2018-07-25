@@ -47,11 +47,11 @@
     @csrf
     <input type="hidden" name="post_id" value="{{$post->id}}">
     <div>
-      <label for="comment-author"></label>
+      <label for="comment-author">@lang('label.comment.author')</label>
       <input type="text" id="comment-author" name="author" value="{{request()->old('author')}}" required>
     </div>
     <div>
-      <label for="comment-content"></label>
+      <label for="comment-content">@lang('label.content')</label>
       <textarea id="comment-content" name="content" rows="5">{{request()->old('content')}}</textarea>
     </div>
     <div>

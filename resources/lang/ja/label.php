@@ -8,9 +8,12 @@ return [
     'back' => '戻る',
     'selected_removes' => '選択行削除',
     'send' => '送信',
+    'confirm' => '確認',
+    'success' => '完了',
     'comments' => 'コメント一覧',
     'show_more' => 'もっと見る',
     'read_post' => '記事を読む',
+    'contact_success' => 'お問い合わせを受け付けました',
     'urge_selection_image' => '画像を選択してください',
     // 共通カラム
     'deleted' => '削除',
@@ -38,5 +41,6 @@ return [
     // カテゴリー
     'category' => 'カテゴリー',
     // コメント
+    'comment.author' => '名前',
     'comment.post_id' => '記事',
 ];

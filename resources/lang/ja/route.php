@@ -9,6 +9,6 @@ return [
     'categories' => 'カテゴリー',
     'archives' => '記事一覧',
     'search' => '検索',
-    'contact' => 'お問い合わせ',
+    'contacts' => 'お問い合わせ',
     'admin' => '管理',
 ];

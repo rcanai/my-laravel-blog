@@ -28,11 +28,17 @@ Route::get('style-example', 'HomeController@styleExample')->name('styleExample')
 Route::get('archives', 'ArchivesController@index')->name('archives');
 Route::get('archives/{id}', 'ArchivesController@show');
 
+// Comment (通常のリクエスト)
+Route::post('comment', 'CommentsController@comment');
+
 // Search
 Route::get('search', 'ArchivesController@search')->name('search');
 
 // Contact
-Route::get('contact', 'ContactsController@index')->name('contact');
+Route::get('contacts', 'ContactsController@index')->name('contacts');
+Route::get('contacts/success', 'ContactsController@success');
+Route::post('contacts/confirm', 'ContactsController@confirm');
+Route::post('contacts/send', 'ContactsController@send');
 
 // Admin
 Route::get('admin', 'Admin\AdminController@index')->name('admin');
@@ -51,9 +57,6 @@ Route::get('posts/edit/{id}', 'Admin\PostsController@edit');
 Route::get('categories', 'Admin\CategoriesController@index');
 Route::get('categories/edit', 'Admin\CategoriesController@edit');
 Route::get('categories/edit/{id}', 'Admin\CategoriesController@edit');
-
-// Comment (通常のリクエスト)
-Route::post('comment', 'CommentsController@comment');
 
 // Files
 Route::get('files/{name}', 'FilesController@show');

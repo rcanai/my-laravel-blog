@@ -15,7 +15,7 @@
           <a href="{{route('search')}}">@lang('route.search')</a>
         </li>
         <li>
-          <a href="{{route('contact')}}">@lang('route.contact')</a>
+          <a href="{{route('contacts')}}">@lang('route.contacts')</a>
         </li>
         <li>
           <a href="{{route('admin')}}">@lang('route.admin')</a>
