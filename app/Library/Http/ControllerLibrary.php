@@ -44,6 +44,16 @@ class ControllerLibrary
         if (isset($request['category'])) {
             $posts->where('posts.category_id', $request['category']);
         }
+
+        // 文字列検索
+        if (isset($request['s'])) {
+            $s = $request['s'];
+            $posts->where(function ($query) use ($s) {
+                $query->where('posts.title', 'like', "%{$s}%");
+                $query->orWhere('posts.content', 'like', "%{$s}%");
+            });
+        }
+
         // ページネーションして返す
         $posts = $posts->paginate(self::PAGE_POST_COUNT);
         return $posts;

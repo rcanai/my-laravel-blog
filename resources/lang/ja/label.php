@@ -10,9 +10,11 @@ return [
     'send' => '送信',
     'confirm' => '確認',
     'success' => '完了',
+    'search' => '検索',
     'comments' => 'コメント一覧',
     'show_more' => 'もっと見る',
     'read_post' => '記事を読む',
+    'search_text' => '検索文字',
     'contact_success' => 'お問い合わせを受け付けました',
     'urge_selection_image' => '画像を選択してください',
     // 共通カラム

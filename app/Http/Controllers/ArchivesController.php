@@ -35,6 +35,6 @@ class ArchivesController extends Controller
 
     public function search()
     {
-        return;
+        return view('archives.search');
     }
 }
