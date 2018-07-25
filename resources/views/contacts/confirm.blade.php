@@ -22,7 +22,7 @@
     </div>
     <div>
       <label for="contact-content">@lang('label.content')</label>
-      <p id="contact-content">{{request('content')}}</p>
+      <p id="contact-content">{!! strip_tags(nl2br(request('content', ''), false), '<br>') !!}</p>
     </div>
   </div>
   <form action="{{url('contacts/send')}}" method="POST">
