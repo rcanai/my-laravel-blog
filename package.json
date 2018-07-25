@@ -29,9 +29,7 @@
         "lodash": "^4.17.4",
         "moment": "^2.22.2",
         "moment-timezone": "^0.5.21",
-        "vue": "^2.5.7"
-    },
-    "dependencies": {
+        "vue": "^2.5.7",
         "vue2-editor": "^2.5.0"
     }
 }
